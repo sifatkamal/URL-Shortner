@@ -21,10 +21,12 @@ body {
   line-height: 1.5;
   color: #111;
   text-align: center;
-  background-color: #28282B;
+  background-color: #0E0D13;
 
 
 }
+
+
 
 main {
   max-width: 720px;
@@ -33,7 +35,7 @@ main {
   border-radius: 2.5px;
   box-shadow: 0 10px 20px rgba(17, 17, 17, 0.125),
     0 5px 5px rgba(17, 17, 17, 0.25);
-  background-color: #36272b;
+  background-color: #1F1F2E;
 
   border-radius: 20px;
 
@@ -42,13 +44,19 @@ main {
 
 h1 {
   padding: 1rem;
-  color: white;
+  color: #7127FF;
 
 }
 
-h6{
+h5{
 
-  color:  white;
+  color:  #7127FF;
+
+}
+
+h3{
+
+color:  #7127FF;
 
 }
 
@@ -76,7 +84,7 @@ input {
 
   display: inline-block;
 
-  background-color: darkred;
+  background-color: #7127FF;
 
   margin: 10px;
 
@@ -104,12 +112,57 @@ section {
 }
 
 
+.collapsible {
+  background-color: #1F1F2E;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: transparent;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #1F1F2E;
+}
+
+
+
+
+
+
+
+
     </style>
 </head>
 <main>
   <h1>URL Shortener</h1>
 
-  <h6>Add the LOOONG URL and get it short. Just put the url below and tap shorten. BOOM. Your url will be short!!</h6>
+
+
+  <button type="button" class="collapsible"><h5>Click here to see Instructions</h5></button>
+  <div class="content">
+    <h5>Add the LOOONG URL and get it short. Just put the url below and tap shorten.</h5>
+
+    <h1>BOOM!!</h1>
+
+    <h5>Your url will be short!!</h5>
+
+
+  </div>
+
+
+
+
 
 
 
@@ -149,3 +202,22 @@ section {
     });
   });
 </script>
+
+
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+  </script>
